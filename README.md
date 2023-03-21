@@ -1,9 +1,12 @@
 
 1、ATRefresh_ObjectC集成方式:
+
     pod 'ATRefresh_ObjectC'
     //或者这样
     pod 'ATRefresh_ObjectC',    :git => 'https://github.com/tianya24/ATRefresh_ObjectC.git'
     //因为墙下载不了可以这样
+    pod 'ATRefresh_ObjectC',    :git => 'https://gitee.com/tianya24/ATRefresh_ObjectC.git'
+    
 2、ATRefresh_ObjectC使用方式:
 
     查看Ddemo
