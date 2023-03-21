@@ -17,7 +17,7 @@
 - (void)setModel:(ATModel *)model{
     if (_model != model) {
         _model = model;
-        [self.imageV setGkImageWithURL:model.cover];
+        [self.imageV setGkImageWithURL:model.imgsrc];
         self.titleLab.text = model.title;
     }
 }

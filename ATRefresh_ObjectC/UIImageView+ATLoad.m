@@ -22,10 +22,10 @@
 - (void)setGkImageWithURL:(nullable NSString *)url
                  unencode:(BOOL)unencode
               placeholder:(nullable UIImage *)placeholder{
-    if ([url hasPrefix:@"/agent/"]) {
-        url = [url stringByReplacingOccurrencesOfString:@"/agent/" withString:@""];
-    }
-    url = unencode ? [url stringByURLDecode] : url;
+//    if ([url hasPrefix:@"/agent/"]) {
+//        url = [url stringByReplacingOccurrencesOfString:@"/agent/" withString:@""];
+//    }
+//    url = unencode ? [url stringByURLDecode] : url;
     [self setImageWithURL:[NSURL URLWithString:url] placeholder:placeholder];
     //[self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:placeholder];
 }

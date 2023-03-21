@@ -23,10 +23,10 @@
 - (void)setModel:(ATModel *)model{
     if (_model != model) {
         _model = model;
-        [self.imageV setGkImageWithURL:model.cover];
+        [self.imageV setGkImageWithURL:model.imgsrc];
         self.titleLab.text = model.title ?:@"";
-        self.subTitlaleb.text = model.shortIntro ?:@"";
-        self.nickNameLab.text = model.author ?:@"";
+        self.subTitlaleb.text = model.description ?:@"";
+        self.nickNameLab.text = model.TAGS ?:@"";
     }
 }
 @end

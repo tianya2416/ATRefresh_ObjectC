@@ -12,10 +12,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ATModel : NSObject<NSCoding, NSCopying,YYModel>
-@property (copy, nonatomic) NSString *cover;
+@property (copy, nonatomic) NSString *imgsrc;
 @property (copy, nonatomic) NSString *title;
-@property (copy, nonatomic) NSString *shortIntro;
-@property (copy, nonatomic) NSString *author;
+@property (copy, nonatomic) NSString *description;
+@property (copy, nonatomic) NSString *TAGS;
 @end
 
 NS_ASSUME_NONNULL_END

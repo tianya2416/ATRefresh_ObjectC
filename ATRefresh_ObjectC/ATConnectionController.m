@@ -22,8 +22,8 @@
 }
 - (void)refreshData:(NSInteger)page{
     NSInteger count = 20;
-    NSDictionary *params =@{@"gender":@"male",@"major":@"玄幻",@"start":@((page - 1) * 20 + 1),@"limit":@(count),@"type":@"hot",@"minor":@""};
-    [ATTool getData:@"https://api.zhuishushenqi.com/book/by-categories" params:params success:^(id  _Nonnull object) {
+    NSString *url = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/headline/T1348647853363/%@-%@.html",@((page - 1)*count),@(count)];
+    [ATTool getData:url params:@{} success:^(id  _Nonnull object) {
         if (page == 1) {
             [self.listData removeAllObjects];
         }
@@ -32,7 +32,7 @@
             [self.listData addObjectsFromArray:datas];
         }
         [self.collectionView reloadData];
-        [self endRefresh:datas.count >= count];
+        [self endRefresh:datas.count > 0];
     } failure:^(NSError * _Nonnull error) {
         [self endRefreshFailure];
     }];
@@ -45,7 +45,7 @@
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat width = (SCREEN_WIDTH - 4 *10 -1)/3;
+    CGFloat width = (SCREEN_WIDTH - 3 *10 -1)/2;
     CGFloat height = width * 1.3 + 30;
     return CGSizeMake(width, height);
 }

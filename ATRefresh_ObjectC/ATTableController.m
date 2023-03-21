@@ -27,9 +27,9 @@
 }
 - (void)refreshData:(NSInteger)page{
     NSInteger count = 20;
-    NSDictionary *params =@{@"gender":@"male",@"major":@"玄幻",@"start":@((page - 1) * count + 1),@"limit":@(count),@"type":@"hot",@"minor":@""};
-    [ATTool getData:@"https://api.zhuishushenqi.com/book/by-categories" params:params success:^(id  _Nonnull object) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{//动画看的更清楚
+    NSString *url = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/headline/T1348647853363/%@-%@.html",@((page - 1)*count),@(count)];
+    [ATTool getData:url params:@{} success:^(id  _Nonnull object) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{//动画看的更清楚
             if (page == 1) {
                 [self.listData removeAllObjects];
             }
@@ -38,7 +38,7 @@
                 [self.listData addObjectsFromArray:datas];
             }
             [self.tableView reloadData];
-            [self endRefresh:datas.count >= count];
+            [self endRefresh:datas.count > 0];
         });
     } failure:^(NSError * _Nonnull error) {
         [self endRefreshFailure];

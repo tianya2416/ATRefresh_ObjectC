@@ -22,6 +22,7 @@ typedef NS_ENUM(NSUInteger, ATRefreshOption) {
 - (NSArray <UIImage *>*)refreshHeaderData;
 
 - (UIImage *)refreshLogoData;
+@optional
 - (NSAttributedString *)refreshTitle;
 - (NSAttributedString *)refreshSubtitle;
 
